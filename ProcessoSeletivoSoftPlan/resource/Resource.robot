@@ -50,6 +50,14 @@ Adicionar o produto "${PRODUTO}" no carrinho
     Clicar no botão pesquisar
     Clicar no botão "Proceed to checkout"
 
+Clicar no menu Women
+    Click Element    xpath=//*[@id="block_top_menu"]/ul/li[1]/a
+
+Clicar no menu Dresses
+    Click Element    xpath=//*[@id="block_top_menu"]/ul/li[2]/a
+
+Clicar no menu Tshirts
+    Click Element    xpath=//*[@id="block_top_menu"]/ul/li[3]/a
 
 #Validações
 
@@ -99,3 +107,26 @@ Conferir se o produto "${PRODUTO}" foi add e esta sendomostrado todos os dados e
     Element Text Should Be         xpath=//*[@id="product_price_2_7_0"]/span             $27.00
     Element Text Should Be         id=total_price               $29.00
     Input Text                     xpath=//*[@id="product_2_7_0_0"]/td[5]/input[2]    1
+
+Verificar os menus "${MENU1}","${MENU2}" e "${MENU3}" estão sendo exibidos
+    Element Text Should Be    xpath=//*[@id="block_top_menu"]/ul/li[1]/a    ${MENU1}
+    Element Text Should Be    xpath=//*[@id="block_top_menu"]/ul/li[2]/a    ${MENU2}
+    Element Text Should Be    xpath=//*[@id="block_top_menu"]/ul/li[3]/a    ${MENU3}
+
+Verificar submenus "TOP" "DRESSES" e suas respectivas categorias "${CAT1}" "${CAT2}" "${CAT3}" "${CAT4}" "${CAT5}"
+    Mouse Over                xpath=//*[@id="block_top_menu"]/ul/li[1]
+    Element Text Should Be    xpath=//*[@id="block_top_menu"]/ul/li[1]/ul/li[1]/ul/li[1]/a    ${CAT1}
+    Element Text Should Be    xpath=//*[@id="block_top_menu"]/ul/li[1]/ul/li[1]/ul/li[2]/a    ${CAT2}
+    Element Text Should Be    xpath=//*[@id="block_top_menu"]/ul/li[1]/ul/li[2]/ul/li[1]/a    ${CAT3}
+    Element Text Should Be    xpath=//*[@id="block_top_menu"]/ul/li[1]/ul/li[2]/ul/li[2]/a    ${CAT4}
+    Element Text Should Be    xpath=//*[@id="block_top_menu"]/ul/li[1]/ul/li[2]/ul/li[3]/a    ${CAT5}
+
+Verificar se esta sendo exibido as categorias "${CAT1}" "${CAT2}" "${CAT3}"
+    Mouse Over                xpath=//*[@id="block_top_menu"]/ul/li[2]/a
+    Element Text Should Be    xpath=//*[@id="block_top_menu"]/ul/li[2]/ul/li[1]/a    ${CAT1}
+    Element Text Should Be    xpath=//*[@id="block_top_menu"]/ul/li[2]/ul/li[2]/a    ${CAT2}
+    Element Text Should Be    xpath=//*[@id="block_top_menu"]/ul/li[2]/ul/li[3]/a    ${CAT3}
+
+Verificar se os produtos das categorias do menu foram exibidos "${QTDPRODCATEGORIAS}"
+    Sleep    2
+    Element Text Should Be    xpath=//*[@id="center_column"]/h1/span[2]   ${QTDPRODCATEGORIAS}
