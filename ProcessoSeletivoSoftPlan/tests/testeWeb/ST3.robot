@@ -1,5 +1,5 @@
 *** Settings ***
-Resource        ../resource/Resource.robot
+Resource        ../../resource/Resource.robot
 Test Setup      Abrir Browser
 Test TearDown   Fechar Browser
 
@@ -33,7 +33,7 @@ Cenario 05: Validar se menu Tshirts é clicável
   Dado que estou na página home do site
   Quando clicar no menu Tshirts
   Então conferir se os produtos das categorias do menu Tshirts foram exibidos "There is 1 product."
-  
+
 *** Keywords ***
 Dado que estou na página home do site
     Acessar a página home do site
@@ -51,7 +51,7 @@ Quando clicar no menu Women
     Clicar no menu Women
 
 Então conferir se os produtos das categorias do menu Women foram exibidos "${QTDPRODCATEGORIAS}"
-    Verificar se os produtos das categorias do menu Women foram exibidos "${QTDPRODCATEGORIAS}"
+        Verificar se os produtos das categorias do menu foram exibidos "${QTDPRODCATEGORIAS}"
 
 Quando clicar no menu Dresses
     Clicar no menu Dresses
