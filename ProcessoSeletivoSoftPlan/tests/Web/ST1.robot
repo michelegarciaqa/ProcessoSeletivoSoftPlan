@@ -1,5 +1,5 @@
 *** Settings ***
-Resource        ../../resource/Resource.robot    
+Resource        ../../resource/ResourceWeb.robot    
 Test Setup      Abrir Browser
 Test TearDown   Fechar Browser
 
